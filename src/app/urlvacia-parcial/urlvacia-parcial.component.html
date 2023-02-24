@@ -1,0 +1,45 @@
+
+<app-menu></app-menu>
+<div class="container">
+<!--card presentacion chicas
+https://www.youtube.com/watch?v=ocysQ07G4PQ
+ralacion base datos
+-->
+<br>
+
+
+  </div>
+    <div class="row row-cols-1 row-cols-md-2 g-2">
+
+        <div class="col"  *ngFor="let row of data; index as i;">
+            
+                <div class="card" >
+
+                <a  (click)="send(row.id)">
+                    <img [src]=" row.img1 " class="card-img-top" alt="..." width="150px" height="150px">
+                    <div class="card-body">
+                    <h5 class="card-title"> {{row.nombre}} </h5>
+                   <!--- {{row |json}}-->
+                    <p class="card-text">
+                      </p>
+                          <p class="card-text"> </p>
+
+                    <div class="card-body"> 
+                        <div *ngIf="condition; else elseBlock">           
+                                </div>
+                                <ng-template #elseBlock>
+                                <a href="login">Iniciar session</a>
+                                </ng-template>
+                                </div>
+                                </div>
+                            </a>
+                </div>
+            
+
+        </div>
+
+
+    
+    
+<!-- fin card presentacion chicas-->
+</div>

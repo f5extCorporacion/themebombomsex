@@ -1,0 +1,71 @@
+
+        <div class="container">
+
+            <div *ngIf="condition; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+            <!-- Button trigger modal -->
+            <script>
+                modal()
+            </script>
+            <br>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Confirmar Codigo
+            </button>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+                
+            </ng-template>
+
+            <ng-template #elseBlock>
+
+                <img src='https://www.f5ext.com/hermosas.png' width="333 px">
+               <!-- <form [formGroup]="myForm" (ngSubmit)="SendEmail()">
+                    
+                    <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-md-1">
+                        <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="@" value="" formControlName="email">
+                        </div>
+                    </div>
+    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                        
+                        <div class="modal-footer" data-bs-toggle="modal">
+                            <input type="submit" class="form-control btn-outline-success"  value="Enviar">
+                        
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                </form>-->
+    
+               
+                <button class="btn btn-success"> Confirmar codigo</button>
+            </ng-template>
+
+        </div>

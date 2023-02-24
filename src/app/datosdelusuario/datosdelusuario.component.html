@@ -1,0 +1,63 @@
+<div class="card-columns">
+    <div class="card bg-primary btn btn-primary" >
+
+      <div class="card-body text-center " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <p class="card-text">
+            <i class="tim-icons icon-single-02" style="font-size:60px"> + </i>
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-warning">
+      <div class="card-body text-center">
+        <p class="card-text">
+            
+            <i class="tim-icons  icon-zoom-split" style="font-size:60px"> Buscar</i>
+        </p>
+      </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create Nuevo Usuario</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body " style="background-color:grey ; color:aqua;">
+        <form class="form-group">
+            <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" style="background-color:grey ;"  aria-describedby="emailHelp">
+                
+              </div>
+
+            <div class="mb-3 ">
+              <label for="exampleInputEmail1" class="form-label">Email </label>
+              <input type="email" class="form-control" id="exampleInputEmail1" style="background-color:grey ;"  aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="exampleInputPassword1"style="background-color:grey ;">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control"style="background-color:#865980; " id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            
+          
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>

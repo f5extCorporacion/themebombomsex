@@ -1,0 +1,51 @@
+
+<div *ngIf="data; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+ <p>Servicios seleccionados</p>
+    <ul class="list-group" *ngFor="let money of pedido; index as i ">
+        <li class="list-group-item active">{{i}} {{money.name}} | $ : {{money.precio}} 
+            <button type="button" class="btn btn-info" (click)=" delete(money) "> X </button> </li>
+    </ul>
+                   .</ng-template>
+                   <ng-template #elseBlock>
+                    <p class="bg-primary">Carrito {{contador}}</p>
+                    <form   (ngSubmit)="sendPedir()"  novalidate>
+                        <p>SERVICIOS PRESENCIALES</p>
+                             <button type="button" class="btn btn-secondary" #sexual (click)="Setsexual(sexual.value)" value="150000">
+                               Relacion Sexual 1 hora <br> $ 150.000</button>
+                           
+                           <button type="button" class="btn btn-info" #compa (click)="Setcompania(compa.value)" value="150000">
+                               Dama compañia <br> $ 100.000</button>
+                               <p >Hora de servicio</p>
+                               <select class="form-select form-select-lg mb-3" #horas (change)="Sethoras(horas.value)" aria-label=".form-select-lg example">
+                                 <option value="1">1</option>
+                                 <option value="2">2</option>
+                                 <option value="3">3</option>
+                                 <option value="4">4</option>
+                                 <option value="5">5</option>
+                                 <option value="6">6</option>
+                                 <option value="7">7</option>
+                                 <option value="8">8</option>
+                                 <option value="9">9</option>
+                                 <option value="10">10</option>
+         
+                               </select>
+                               <p>SERVICIOS VIRTUALES</p>
+                               <button type="button" class="btn btn-danger" #fotos (click)="Setpackfotos(fotos.value)" value="150000">
+                                   Pack 10 fotos <br> $ 50.000</button>
+       
+                                   <button type="button" class="btn btn-danger" #video (click)="Setvideo(video.value)" value="150000">
+                                       Video de 5 min tocandose <br> $ 100.000</button>
+                             
+                           
+                             <div class="mb-3">
+                               <label for="exampleFormControlTextarea1" class="form-label"  style="color: black;">MENSAJE OBSERVACION</label>
+                               <textarea class="form-control" id="exampleFormControlTextarea1" style="color: black;" rows="3"></textarea>
+                             </div>
+                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                             <button type="button" class="btn btn-primary" (click)="sendPedir()"> Aceptar</button>
+                         
+                          </form>
+                       
+                   </ng-template>
+  

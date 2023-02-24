@@ -1,0 +1,96 @@
+
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Card
+          <span class="badge bg-primary rounded-pill" style="font-size: 25px;"> {{cardReturn.length}} </span>
+        </li>
+
+    </ul>
+    <br>
+                <div class="list-group" *ngFor="let pro of servicios">
+   <!--(click)="add(pro)" -->
+                        <a  class="list-group-item list-group-item-action" #{{pro.nameservicio}} style="color: black;">
+                            <div class="d-flex w-100 justify-content-between">
+                            <h3 class="mb-1" style="color: black;"> 
+                                 {{pro.nameservicio}} </h3>
+                            <small class="text-muted" style="color: black;"></small>
+                            </div>
+                            <p class="mb-1" *ngIf="pro.horas == 0" style="color: black;">
+                                1 Hora {{pro.precio  | number}}
+                                <select class="form-select form-select-lg mb-3"  #mySelect1
+                                (change)='preciosexual(mySelect1.value,pro.precio)'aria-label=".form-select-lg example">
+                                    <option selected value="1">tiempo</option>
+                                    <option value="1">1 Hora</option>
+                                    <option value="2">2 Hora</option>
+                                    <option value="3">3 Hora</option>
+                                    <option value="4">4 Hora</option>
+                                    <option value="5">5 Hora</option>
+                                    <option value="6">6 Hora</option>
+                                    <option value="otro">Mas Horas</option>
+                                  </select>
+                                  Total: {{sexual| number }} <br>
+                                  <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="add(pro)"> + Agregar</button>
+                              </p>
+
+                              <p class="mb-1" *ngIf="pro.horas == 1" style="color: black;">
+                                1 Hora {{pro.precio | number}}
+                                <select class="form-select form-select-lg mb-3"  #mySelect2
+                                (change)='preciocomania(mySelect2.value,pro.precio)'aria-label=".form-select-lg example">
+                                    <option selected value="1">tiempo</option>
+                                    <option value="1">1 Hora</option>
+                                    <option value="2">2 Hora</option>
+                                    <option value="3">3 Hora</option>
+                                    <option value="4">4 Hora</option>
+                                    <option value="5">5 Hora</option>
+                                    <option value="6">6 Hora</option>
+                                    <option value="otro">Mas Horas</option>
+                                  </select>
+                                  Total: {{compania |number}} <br>
+                                  <button type="button" class="btn btn-success" (click)="add(pro)"> + Agregar</button>
+                              </p>
+                              
+                              <p class="mb-1" *ngIf="pro.horas == -1" style="color: black;">
+                                
+                              
+                                  <button type="button" class="btn btn-success" (click)="add(pro)"> + Agregar {{pro.tipo}} </button>
+                              </p>
+                            <app-alerta-seleccion
+                            [Seleccion]="pro"
+                            (notify)="onNotify()"
+                            ></app-alerta-seleccion>
+                        </a>
+                        <br>
+                        <!--LE enviamos los datos por @Input-->    
+                </div>
+                <!--modal incicio-->
+                <!-- Button trigger modal -->
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content bg-warning">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Card Seleccionados</h1><br>
+                               
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="list-group" *ngFor="let c of cardReturn">
+                                        <li class="list-group-item">{{c.nameservicio}} / ${{c.precio}} | Horas {{horaSexual}} </li>
+                                      </ul>
+                                      <ul>
+                                        <li  class="list-group" style="font-size: 25px; color:black"> 
+                                          Total {{sexual + compania | number}}</li>
+                                      </ul>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+</div>
